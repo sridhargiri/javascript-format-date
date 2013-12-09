@@ -1,0 +1,32 @@
+
+function format_date() {
+    var CalMonths = new Array(13);
+	CalMonths[1] = "January";
+	CalMonths[2] = "February";
+	CalMonths[3] = "March";
+	CalMonths[4] = "April";
+	CalMonths[5] = "May";
+	CalMonths[6] = "June";
+	CalMonths[7] = "July";
+	CalMonths[8] = "August";
+	CalMonths[9] = "September";
+	CalMonths[10] = "October";
+	CalMonths[11] = "November";
+	CalMonths[12] = "December";
+
+    var time=new Date();
+    var month=CalMonths[time.getMonth() + 1];
+    var date=time.getDate();
+    var year=time.getYear();
+    var day=time.getDay();
+    
+    if((year > 0) && (year < 200)) year = 1900 + year;
+    
+    whatDate = new Date();
+    var whatDay = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+    var whatMonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+    
+    date_today = ( whatDay[time.getDay()]+", " +whatMonth[whatDate.getMonth()]+ " " + date + ", " + year);
+    return date_today;
+    }
+
